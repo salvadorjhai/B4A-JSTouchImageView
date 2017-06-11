@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.05</doclet-version-NOT-library-version>
+    <class>
+        <name>com.salvadorjhai.widgets.JSTouchImagePager</name>
+        <shortname>JSTouchImagePager</shortname>
+        <comment>Wrap of: https://github.com/MikeOrtiz/TouchImageView
+ Credits to: Mike Ortiz
+ Required: android-support-v4
+ 
+ Usage:&lt;code&gt;
+ ' Datasource can be a list of bitmap, list of Path and Filename or both
+ 
+ ' Initialize your DataSource
+ Dim lst As List
+ lst.Initialize
+ 
+ ' Array of bitmap (not recommended)
+ lst.Add(LoadBitmap(File.DirAssets, "1.jpg"))
+ lst.Add(LoadBitmap(File.DirAssets, "2.jpg"))
+ lst.Add(LoadBitmap(File.DirAssets, "3.jpg"))
+ 
+ ' Array of file (recommended)
+ lst.Add(Array As String(File.DirAssets, "4.jpg"))
+ lst.Add(Array As String(File.DirAssets, "5.jpg"))
+ 
+ ' Initialize Pager and set DataSource
+ Dim pager As JSTouchImagePager
+ pager.Initialize("pager")
+ pager.DataSource = lst
+ Activity.AddView(pager, 0dip, 0dip, 100%x, 100%y)&lt;/code&gt;</comment>
+        <objectwrapper>com.ortiz.touch.ExtendedViewPager</objectwrapper>
+        <owner>process</owner>
+        <event>OnItemClick(position As int)</event>
+        <event>OnPageSelected(position As int)</event>
+        <event>OnPageScrolled(position As int, positionOffset As float, positionOffsetPixels As int)</event>
+        <event>OnPageScrollStateChanged(scroll_state As int)</event>
+        <method>
+            <name>BringToFront</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>RequestFocus</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>ItemUpdateAt</name>
+            <comment>Item update at.
+position: the position
+data: the new data</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>position</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>data</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RemoveView</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SetBackgroundImage</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.Bitmap</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Invalidate3</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg3</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ItemClearAll</name>
+            <comment>Clear all item on the listview</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Invalidate2</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.Rect</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>ItemAdd</name>
+            <comment>Add item to list
+ Example: &lt;code&gt;
+ pager.ItemAdd(LoadBitmap(File.DirAssets, "1.jpg"))
+ 
+ ' OR use Dir and Filename (Recommended)
+ pager.ItemAdd(Array As String(File.DirAssets, "4.jpg"))
+ 
+ &lt;/code&gt;
+bmp: Bitmap/Array As String(dir, filename)</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>bmp</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment>Initialize View Pager
+EventName: the event name</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>eventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>getItemPosition</name>
+            <comment>Get item position.
+bmp: bitmap
+Return type: @return:position</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>bmp</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Invalidate</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SetLayout</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg3</name>
+                <type Pixel="true">int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>DesignerCreateView</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>paramPanelWrapper</name>
+                <type>anywheresoftware.b4a.objects.PanelWrapper</type>
+            </parameter>
+            <parameter>
+                <name>paramLabelWrapper</name>
+                <type>anywheresoftware.b4a.objects.LabelWrapper</type>
+            </parameter>
+            <parameter>
+                <name>paramMap</name>
+                <type>anywheresoftware.b4a.objects.collections.Map</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetColorAnimated</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetLayoutAnimated</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg3</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg4</name>
+                <type Pixel="true">int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetVisibleAnimated</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ItemRemoveAt</name>
+            <comment>Remove item from list.
+position: the position</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>position</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SendToBack</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>Enabled</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Top</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Parent</name>
+            <returntype>java.lang.Object</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Visible</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Background</name>
+            <returntype>android.graphics.drawable.Drawable</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.drawable.Drawable</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Height</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Left</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Color</name>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>DataSource</name>
+            <returntype>anywheresoftware.b4a.objects.collections.List</returntype>
+            <parameter>
+                <name>bitmaps</name>
+                <type>anywheresoftware.b4a.objects.collections.List</type>
+            </parameter>
+            <comment>Get datasource.</comment>
+        </property>
+        <property>
+            <name>CurrentPosition</name>
+            <returntype>int</returntype>
+            <comment>Get item current position.</comment>
+        </property>
+        <property>
+            <name>OffscreenPageLimit</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>limit</name>
+                <type>int</type>
+            </parameter>
+            <comment>Returns the number of pages that will be retained to either side of the current page in the view hierarchy in an idle state. Defaults to 1.</comment>
+        </property>
+        <property>
+            <name>Tag</name>
+            <returntype>java.lang.Object</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>java.lang.Object</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Width</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <field>
+            <name>PAGE_SCROLL_STATE_IDLE</name>
+            <comment>The page scroll state idle.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PAGE_SCROLL_STATE_DRAGGING</name>
+            <comment>The page scroll state dragging.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PAGE_SCROLL_STATE_SETTLING</name>
+            <comment>The page scroll state settling.</comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>com.salvadorjhai.widgets.JSTouchImagePager.MyAdapter</name>
+        <comment>The Class MyAdapter.</comment>
+        <owner>process</owner>
+        <method>
+            <name>finishUpdate</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.view.ViewGroup</type>
+            </parameter>
+        </method>
+        <method>
+            <name>getPageWidth</name>
+            <comment></comment>
+            <returntype>float</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>unregisterDataSetObserver</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.database.DataSetObserver</type>
+            </parameter>
+        </method>
+        <method>
+            <name>saveState</name>
+            <comment></comment>
+            <returntype>android.os.Parcelable</returntype>
+        </method>
+        <method>
+            <name>setPrimaryItem</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.view.ViewGroup</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>destroyItem</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>container</name>
+                <type>android.view.ViewGroup</type>
+            </parameter>
+            <parameter>
+                <name>position</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>object</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>isViewFromObject</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>view</name>
+                <type>android.view.View</type>
+            </parameter>
+            <parameter>
+                <name>object</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>notifyDataSetChanged</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>restoreState</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.os.Parcelable</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>java.lang.ClassLoader</type>
+            </parameter>
+        </method>
+        <method>
+            <name>getItemPosition</name>
+            <comment></comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>object</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>getPageTitle</name>
+            <comment></comment>
+            <returntype>java.lang.CharSequence</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>startUpdate</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.view.ViewGroup</type>
+            </parameter>
+        </method>
+        <method>
+            <name>instantiateItem</name>
+            <comment></comment>
+            <returntype>java.lang.Object</returntype>
+            <parameter>
+                <name>container</name>
+                <type>android.view.ViewGroup</type>
+            </parameter>
+            <parameter>
+                <name>position</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>registerDataSetObserver</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.database.DataSetObserver</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Count</name>
+            <returntype>int</returntype>
+            <comment></comment>
+        </property>
+        <field>
+            <name>POSITION_UNCHANGED</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>POSITION_NONE</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>com.salvadorjhai.widgets.JSTouchImageView</name>
+        <shortname>JSTouchImageView</shortname>
+        <comment>Wrap of: https://github.com/MikeOrtiz/TouchImageView
+ Credits to: Mike Ortiz</comment>
+        <objectwrapper>com.ortiz.touch.TouchImageView</objectwrapper>
+        <owner>activity</owner>
+        <event>OnItemClick</event>
+        <method>
+            <name>setImageBitmap</name>
+            <comment>Set Bitmap Image.
+bm: - bitmap</comment>
+            <returntype>com.salvadorjhai.widgets.JSTouchImageView</returntype>
+            <parameter>
+                <name>bm</name>
+                <type>android.graphics.Bitmap</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RequestFocus</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>BringToFront</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>setMaxZoom</name>
+            <comment>Set the max zoom multiplier. Default value: 3.
+max: max zoom multiplier.</comment>
+            <returntype>com.salvadorjhai.widgets.JSTouchImageView</returntype>
+            <parameter>
+                <name>max</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>resetZoom</name>
+            <comment>Reset zoom and translation to initial state.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>RemoveView</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SetBackgroundImage</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.Bitmap</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Invalidate3</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg3</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>setMinZoom</name>
+            <comment>Set the min zoom multiplier. Default value: 1.
+min: min zoom multiplier.</comment>
+            <returntype>com.salvadorjhai.widgets.JSTouchImageView</returntype>
+            <parameter>
+                <name>min</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Invalidate2</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.Rect</type>
+            </parameter>
+        </method>
+        <method>
+            <name>setZoom3</name>
+            <comment>Set zoom to the specified scale. Image will be centered around the point
+ (focusX, focusY). These floats range from 0 to 1 and denote the focus point
+ as a fraction from the left and top of the view. For example, the top left 
+ corner of the image would be (0, 0). And the bottom right corner would be (1, 1).
+scale: 
+focusX: 
+focusY: 
+scaleType: </comment>
+            <returntype>com.salvadorjhai.widgets.JSTouchImageView</returntype>
+            <parameter>
+                <name>scale</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>focusX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>focusY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>scaleType</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>setZoom1</name>
+            <comment>Set zoom to the specified scale. Image will be centered by default.
+scale: </comment>
+            <returntype>com.salvadorjhai.widgets.JSTouchImageView</returntype>
+            <parameter>
+                <name>scale</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>setZoom2</name>
+            <comment>Set zoom to the specified scale. Image will be centered around the point
+ (focusX, focusY). These floats range from 0 to 1 and denote the focus point
+ as a fraction from the left and top of the view. For example, the top left 
+ corner of the image would be (0, 0). And the bottom right corner would be (1, 1).
+scale: 
+focusX: 
+focusY: </comment>
+            <returntype>com.salvadorjhai.widgets.JSTouchImageView</returntype>
+            <parameter>
+                <name>scale</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>focusX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>focusY</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment>Initialize TouchImageView
+eventName: the event name</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>eventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>setScaleType</name>
+            <comment>Set Scale Type.
+pScaleType: the new scale type</comment>
+            <returntype>com.salvadorjhai.widgets.JSTouchImageView</returntype>
+            <parameter>
+                <name>pScaleType</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsZoomed</name>
+            <comment>Returns false if image is in initial, unzoomed state. False, otherwise.
+Return type: @return:true if image is zoomed</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Invalidate</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SetLayout</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg3</name>
+                <type Pixel="true">int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>DesignerCreateView</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>paramPanelWrapper</name>
+                <type>anywheresoftware.b4a.objects.PanelWrapper</type>
+            </parameter>
+            <parameter>
+                <name>paramLabelWrapper</name>
+                <type>anywheresoftware.b4a.objects.LabelWrapper</type>
+            </parameter>
+            <parameter>
+                <name>paramMap</name>
+                <type>anywheresoftware.b4a.objects.collections.Map</type>
+            </parameter>
+        </method>
+        <method>
+            <name>setImageDrawable</name>
+            <comment>Set Image Drawable.
+drawable: - BitmapDrawable, etc.</comment>
+            <returntype>com.salvadorjhai.widgets.JSTouchImageView</returntype>
+            <parameter>
+                <name>drawable</name>
+                <type>android.graphics.drawable.Drawable</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetColorAnimated</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetLayoutAnimated</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg3</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg4</name>
+                <type Pixel="true">int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetVisibleAnimated</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SendToBack</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>Enabled</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Parent</name>
+            <returntype>java.lang.Object</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Top</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Visible</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>ScaleType</name>
+            <returntype>int</returntype>
+            <comment>Get Scale Type</comment>
+        </property>
+        <property>
+            <name>Background</name>
+            <returntype>android.graphics.drawable.Drawable</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.drawable.Drawable</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Height</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Left</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Color</name>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>CurrentZoom</name>
+            <returntype>float</returntype>
+            <comment>Get the current zoom. This is the zoom relative to the initial
+ scale, not the original resource.</comment>
+        </property>
+        <property>
+            <name>MinZoom</name>
+            <returntype>float</returntype>
+            <comment>Get the min zoom multiplier.</comment>
+        </property>
+        <property>
+            <name>Tag</name>
+            <returntype>java.lang.Object</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>java.lang.Object</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Width</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>MaxZoom</name>
+            <returntype>float</returntype>
+            <comment>Get the max zoom multiplier.</comment>
+        </property>
+        <field>
+            <name>SCALE_TYPE_FIT_XY</name>
+            <comment>The Constant SCALE_TYPE_FIT_XY.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>SCALE_TYPE_CENTER</name>
+            <comment>The Constant SCALE_TYPE_CENTER.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>SCALE_TYPE_FIT_CENTER</name>
+            <comment>The Constant SCALE_TYPE_FIT_CENTER.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>SCALE_TYPE_CENTER_CROP</name>
+            <comment>The Constant SCALE_TYPE_CENTER_CROP.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>SCALE_TYPE_MATRIX</name>
+            <comment>The Constant SCALE_TYPE_MATRIX.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>SCALE_TYPE_CENTER_INSIDE</name>
+            <comment>The Constant SCALE_TYPE_CENTER_INSIDE.</comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <version>1.0</version>
+    <author>salvadorjhai</author>
+    <dependsOn>android-support-v4</dependsOn>
+</root>
