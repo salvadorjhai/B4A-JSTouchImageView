@@ -568,6 +568,7 @@ position: the position</comment>
         <objectwrapper>com.ortiz.touch.TouchImageView</objectwrapper>
         <owner>activity</owner>
         <event>OnItemClick</event>
+        <event>OnMove</event>
         <method>
             <name>SetMinZoom</name>
             <comment>Set the min zoom multiplier. Default value: 1.
@@ -640,6 +641,17 @@ bm: - bitmap</comment>
             <parameter>
                 <name>arg0</name>
                 <type>android.graphics.Rect</type>
+            </parameter>
+        </method>
+        <method>
+            <name>setZoom4</name>
+            <comment>Set zoom parameters equal to another TouchImageView. Including scale, position,
+ and ScaleType.
+JSTouchImageView: </comment>
+            <returntype>com.salvadorjhai.widgets.JSTouchImageView</returntype>
+            <parameter>
+                <name>img</name>
+                <type>com.salvadorjhai.widgets.JSTouchImageView</type>
             </parameter>
         </method>
         <method>
@@ -1032,7 +1044,7 @@ focusY: </comment>
             <returntype>int</returntype>
         </field>
     </class>
-    <version>1.1</version>
+    <version>1.2</version>
     <author>salvadorjhai</author>
     <dependsOn>android-support-v4</dependsOn>
 </root>

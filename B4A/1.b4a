@@ -6,9 +6,10 @@ ManifestCode='This code will be applied to the manifest file during compilation.
 IconFile=
 NumberOfFiles=1
 File1=pexels-photo-206509(1).jpeg
-NumberOfLibraries=2
+NumberOfLibraries=3
 Library1=core
 Library2=jstouchimageview
+Library3=javaobject
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: B4A Example
@@ -33,7 +34,8 @@ End Sub
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
 	'These variables can only be accessed from this module.
-	
+	Dim touchImage As JSTouchImageView
+
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -41,16 +43,11 @@ Sub Activity_Create(FirstTime As Boolean)
 	'Activity.LoadLayout("Layout1")
 
 	' add JSTouchImageView on your activity via code or from designer
-	Dim touchImage As JSTouchImageView
 	touchImage.Initialize("touchImage")
 	Activity.AddView(touchImage, 0dip, 0dip, 100%x, 100%y)
 	
 	' set image bitmap
-	touchImage.setImageBitmap(LoadBitmap(File.DirAssets, "pexels-photo-206509(1).jpeg"))
-	touchImage.setZoom1(100)
-	
-	'get android.graphics.RectF using javaobject library
-	'Dim jo As JavaObject = touchImage.ZoomedRect
+	touchImage.SetImageBitmap(LoadBitmap(File.DirAssets, "pexels-photo-206509(1).jpeg"))
 	
 End Sub
 
@@ -60,4 +57,19 @@ End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
 
+End Sub
+ 
+Sub touchImage_OnMove
+	
+	Dim point As JavaObject = touchImage.ScrollPosition
+	Dim rect As JavaObject = touchImage.ZoomedRect
+	
+	Dim currentZoom As Float = touchImage.CurrentZoom
+	Dim isZoomed As Boolean = touchImage.IsZoomed
+
+	LogColor($"x: ${point.GetField("x")} y: ${point.GetField("y")}"$, Colors.Blue)
+	LogColor($"left: ${rect.GetField("left")} top: ${rect.GetField("top")}"$, Colors.Blue)
+	LogColor($"right: ${rect.GetField("right")} bottom: ${rect.GetField("bottom")}"$, Colors.Blue)
+	LogColor($"currentZoom: ${currentZoom} isZoomed: ${isZoomed}"$, Colors.Blue)
+ 
 End Sub
