@@ -1,4 +1,4 @@
-﻿Version=6.5
+﻿Version=7
 NumberOfModules=1
 Module1=Starter
 Build1=Default,b4a.example
@@ -47,7 +47,11 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	' set image bitmap
 	touchImage.setImageBitmap(LoadBitmap(File.DirAssets, "pexels-photo-206509(1).jpeg"))
-
+	touchImage.setZoom1(100)
+	
+	'get android.graphics.RectF using javaobject library
+	'Dim jo As JavaObject = touchImage.ZoomedRect
+	
 End Sub
 
 Sub Activity_Resume
