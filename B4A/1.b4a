@@ -1,15 +1,17 @@
-﻿Version=7
-NumberOfModules=1
-Module1=Starter
-Build1=Default,b4a.example
-ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
-IconFile=
-NumberOfFiles=1
+﻿Build1=Default,b4a.example
 File1=pexels-photo-206509(1).jpeg
-NumberOfLibraries=3
+FileGroup1=Default Group
+Group=Default Group
+IconFile=
 Library1=core
 Library2=jstouchimageview
 Library3=javaobject
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
+Module1=Starter
+NumberOfFiles=1
+NumberOfLibraries=3
+NumberOfModules=1
+Version=9.3
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: B4A Example
@@ -48,7 +50,6 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	' set image bitmap
 	touchImage.SetImageBitmap(LoadBitmap(File.DirAssets, "pexels-photo-206509(1).jpeg"))
-	
 End Sub
 
 Sub Activity_Resume
